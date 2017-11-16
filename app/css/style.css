@@ -1,0 +1,227 @@
+body {
+  background-color: #f0f4f8;
+  color: #3c495a;
+  margin: 0px; }
+
+a {
+  text-decoration: none;
+  color: #3c495a;
+  font-family: "Roboto", sans-serif; }
+
+header {
+  background: #ffffff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.57);
+  box-shadow: 0 10px 10px -10px #f0f4f8;
+  width: 100%;
+  padding: 30px 0; }
+  header .container {
+    width: 100%; }
+
+.txt-green {
+  color: #56D48F !important; }
+
+.txt-blue {
+  color: #55a8fd !important; }
+
+.header-heading {
+  width: 40%;
+  display: inline;
+  margin-left: 75px; }
+  .header-heading a {
+    font-family: "Roboto", sans-serif;
+    font-weight: 800;
+    font-size: 16px; }
+    .header-heading a img {
+      width: 150px; }
+
+.header-menu {
+  float: right;
+  margin-right: 80px; }
+  .header-menu a {
+    font-weight: 500;
+    font-size: 12px;
+    margin-left: 25px; }
+    .header-menu a.active {
+      color: #55a8fd; }
+
+.body-content .breadcrumb {
+  background-color: #ffffff; }
+  .body-content .breadcrumb ul {
+    padding: 30px 75px;
+    margin: 0;
+    list-style: none; }
+    .body-content .breadcrumb ul li {
+      display: inline;
+      font-size: 18px;
+      font-weight: 500;
+      font-size: 14px;
+      color: #55a8fd; }
+      .body-content .breadcrumb ul li a {
+        color: #3c495a;
+        text-decoration: none; }
+        .body-content .breadcrumb ul li a:hover {
+          color: #55a8fd; }
+    .body-content .breadcrumb ul li + li:before {
+      padding: 0px;
+      color: #3c495a;
+      content: "/\00a0"; }
+
+.body-content .pagination {
+  /*margin-top: 30px;*/
+  background-color: #ffffff; }
+  .body-content .pagination .content {
+    font-size: 12px;
+    font-weight: 400;
+    color: #7f92a9;
+    padding-top: 30px;
+    padding-bottom: 60px;
+    padding-left: 75px;
+    padding-right: 75px; }
+    .body-content .pagination .content .body {
+      float: right; }
+      .body-content .pagination .content .body a {
+        font-size: 12px;
+        font-weight: 400;
+        color: #7f92a9;
+        padding: 2px 5px;
+        text-decoration: none; }
+        .body-content .pagination .content .body a.active {
+          background-color: #55a8fd;
+          color: #fff; }
+
+.cards .card-title {
+  text-align: center;
+  margin: 30px auto; }
+
+.cards .card-body {
+  margin: auto 75px;
+  text-align: center; }
+  .cards .card-body .tiles {
+    height: 520px;
+    width: 32%;
+    display: inline-block;
+    background-color: #ffffff;
+    margin-bottom: 30px; }
+    .cards .card-body .tiles:nth-child(1) {
+      float: left; }
+    .cards .card-body .tiles:nth-child(3n+1) {
+      float: left; }
+    .cards .card-body .tiles:nth-child(3n) {
+      float: right; }
+    .cards .card-body .tiles:hover {
+      /*transform: translate(0, -5px);*/
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4); }
+    .cards .card-body .tiles .heading {
+      padding-top: 30px;
+      height: 35px; }
+      .cards .card-body .tiles .heading button {
+        background-color: #56D48F;
+        border: none;
+        border-radius: 25px;
+        color: #fff;
+        float: left;
+        font-size: 15px;
+        font-weight: 500;
+        padding: 8px 8px;
+        margin-left: 30px; }
+      .cards .card-body .tiles .heading h5 {
+        float: right;
+        font-size: 15px;
+        font-weight: 800;
+        margin: 0px;
+        padding-top: 8px;
+        padding-right: 38px; }
+    .cards .card-body .tiles .content {
+      clear: both;
+      padding-top: 15px; }
+      .cards .card-body .tiles .content img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 2px solid #55a8fd; }
+      .cards .card-body .tiles .content h5 {
+        margin-bottom: 5px;
+        margin-top: 10px;
+        font-size: 18px;
+        font-weight: 800; }
+        .cards .card-body .tiles .content h5:hover {
+          color: #55a8fd; }
+      .cards .card-body .tiles .content h6 {
+        margin-bottom: 5px;
+        margin-top: 10px;
+        font-size: 12px;
+        font-weight: 200;
+        color: #7f92a9; }
+      .cards .card-body .tiles .content .skill {
+        padding: 10px 20px; }
+        .cards .card-body .tiles .content .skill button {
+          background-color: #ffffff;
+          border: 1px solid #ced9ee;
+          border-radius: 25px;
+          font-size: 12px;
+          font-weight: 500;
+          padding: 10px 10px; }
+          .cards .card-body .tiles .content .skill button:hover {
+            background-color: #55a8fd;
+            color: #ffffff;
+            cursor: pointer; }
+          .cards .card-body .tiles .content .skill button.more-skill {
+            background-color: #55a8fd;
+            color: #ffffff; }
+      .cards .card-body .tiles .content p {
+        padding: 10px 20px;
+        margin: 0;
+        font-size: 12px;
+        font-weight: 500;
+        margin-bottom: 15px; }
+      .cards .card-body .tiles .content .profile {
+        font-size: 14px;
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 30px;
+        bottom: 0;
+        margin-top: 20px;
+        text-transform: uppercase;
+        font-weight: 700; }
+        .cards .card-body .tiles .content .profile:hover {
+          background-color: #55a8fd;
+          cursor: pointer; }
+          .cards .card-body .tiles .content .profile:hover a {
+            color: #fff; }
+
+footer {
+  background-color: #324258 !important;
+  padding-left: 75PX;
+  padding-right: 75PX;
+  height: 250px;
+  color: #fff;
+  /*width: 100%;*/
+  bottom: 0; }
+  footer .logo {
+    width: 25%;
+    float: left; }
+  footer .social {
+    width: 25%;
+    float: left; }
+    footer .social i:not(:first-of-type) {
+      margin-left: 25px; }
+  footer .directory, footer .staff, footer .support {
+    width: 15%;
+    float: left; }
+  footer ul {
+    list-style-type: none;
+    padding: 0px; }
+  footer li {
+    margin-bottom: 15px;
+    font-size: 12px;
+    font-weight: 400;
+    color: #a6b8d2;
+    font-family: "Roboto", sans-serif; }
+    footer li:hover {
+      color: #ffffff;
+      cursor: pointer; }
+  footer h5 {
+    font-size: 12px;
+    font-weight: 700;
+    color: #ffffff;
+    font-family: "Roboto", sans-serif; }
