@@ -1,302 +1,260 @@
-$background-color:#f0f4f8;
-$main-color:#ffffff;
-$active-color:#55a8fd;
-$footer-color:#324258;
-$font-color:#3c495a;
-$tag-green:#56D48F;
-$font-gray:#7f92a9;
-$font-family: 'Roboto', sans-serif;
-body{
+@import 'variable';
+@import 'partials';
+
+body {
   background-color: $background-color;
   color: $font-color;
-  margin: 0px;
+  margin: 0;
 }
 
-a{
-  text-decoration:none;
+a {
+  text-decoration: none;
   color: $font-color;
   font-family: $font-family;
 }
-header{
+
+header {
   background: $main-color;
   border-bottom: 1px solid rgba(0, 0, 0, 0.57);
   box-shadow: 0 10px 10px -10px $background-color;
   width: 100%;
-  padding: 30px 0;
-  .container{
-    width: 100%;
+  padding:0px 0px 30px 30px;
 
+  .container {
+    width: 100%;
+  }
+  .header-heading {
+    width: 40%;
+    display: inline;
+    margin-left: 75px;
+    a {
+      img {
+        width: 150px;
+      }
+    }
+  }
+  .header-menu {
+    float: right;
+    margin-right: 80px;
+    a {
+      @include font(12px, 500, $font-family);
+      margin-left: 25px;
+
+      &.active {
+        color: $active-color;
+      }
+    }
   }
 }
-.txt-green{
+.txt-green {
   color: $tag-green !important;
 }
-.txt-blue{
+.txt-blue {
   color: $active-color !important;
 }
-.header-heading {
-  width: 40%;
-  display:inline;
-  margin-left: 75px;
-  a{
-    font-family: $font-family;
-    font-weight: 800;
-    font-size: 16px;
-    img{
-      width: 150px;
-    }
-  }
-}
-
-.header-menu{
-  float: right;
-  margin-right: 80px;
-  a{
-    font-weight: 500;
-    font-size: 12px;
-    margin-left: 25px;
-    &.active{
-      color: $active-color;
-    }
-  }
-
-}
-
-.body-content{
-  .breadcrumb{
+.body-content {
+  .breadcrumb {
     background-color: #ffffff;
-    ul{
-      padding: 30px 75px;
+    ul {
+      padding:30px 75px;
       margin: 0;
       list-style: none;
-      li{
+      li {
         display: inline;
-        font-size: 18px;
-        font-weight: 500;
-        font-size: 14px;
+        @include font(14px, 500, $font-family);
         color: $active-color;
         a {
-         color: $font-color;
-         text-decoration: none;
-         &:hover {
-            color:$active-color;
+          color: $font-color;
+          text-decoration: none;
+          &:hover {
+            color: $active-color;
           }
         }
       }
       li+li:before {
-        padding: 0px;
+        padding:0;
         color: $font-color;
         content: "/\00a0";
       }
     }
   }
-  .pagination{
-    /*margin-top: 30px;*/
+
+  .pagination {
     background-color: #ffffff;
-    .content{
-      font-size: 12px;
-      font-weight: 400;
+    .content {
+      @include font(12px, 400, $font-family);
       color: #7f92a9;
-      padding-top: 30px;
-      padding-bottom: 60px;
-      padding-left:75px;
-      padding-right: 75px;
-
-      .body{
-          float: right;
+      padding: 30px 75px 60px;
+      .body {
+        float: right;
         a {
-
-          font-size: 12px;
-          font-weight: 400;
+          @include font(12px, 400, $font-family);
           color: #7f92a9;
           padding: 2px 5px;
           text-decoration: none;
-          &.active{
-            background-color:$active-color;
-            color:#fff;
+          &.active {
+            background-color: $active-color;
+            color: #fff;
           }
         }
       }
-
     }
   }
 }
 
-.cards{
-  .card-title{
+.cards {
+  .card-title {
     text-align: center;
     margin: 30px auto;
   }
-  .card-body{
-      margin: auto 75px;
-      text-align: center;
-      .tiles{
-        height: 520px;
-        width: 32%;
-        display:inline-block;
-        background-color: $main-color;
-        margin-bottom: 30px;
-        &:nth-child(1){
+  .card-body {
+    margin: auto 75px;
+    text-align: center;
+    .tiles {
+      height: 520px;
+      width: 32%;
+      display: inline-block;
+      background-color: $main-color;
+      margin-bottom: 30px;
+      &:nth-child(1) {
+        float: left;
+      }
+      &:nth-child(3n+1) {
+        float: left;
+      }
+      &:nth-child(3n) {
+        float: right;
+      }
+      &:hover {
+        /*transform: translate(0, -5px);*/
+        box-shadow: 0 2px 8px rgba(0,0,0,.4);
+      }
+      .heading {
+        padding-top: 30px;
+        height: 35px;
+        button {
+          background-color: $tag-green;
+          border: none;
+          border-radius: 25px;
+          color: #fff;
           float: left;
+          @include font(15px, 500, $font-family);
+          padding: 8px;
+          margin-left: 30px;
         }
-        &:nth-child(3n+1){
-          float: left;
-        }
-        &:nth-child(3n){
+        h5 {
           float: right;
-        }
-        &:hover{
-          /*transform: translate(0, -5px);*/
-          box-shadow: 0 2px 8px rgba(0,0,0,.4);
-        }
-        .heading{
-          padding-top: 30px;
-          height: 35px;
-          button{
-            background-color: $tag-green;
-            border: none;
-            border-radius: 25px;
-            color: #fff;
-            float: left;
-            font-size: 15px;
-            font-weight: 500;
-            padding: 8px 8px;
-            margin-left: 30px;
-
-          }
-          h5{
-            float: right;
-            font-size: 15px;
-            font-weight: 800;
-            margin: 0px;
-            padding-top: 8px;
-            padding-right: 38px;
-          }
-
-        }
-        .content{
-          clear: both;
-          padding-top: 15px;
-          img{
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            border:2px solid $active-color;
-          }
-          h5{
-            margin-bottom: 5px;
-            margin-top: 10px;
-            font-size: 18px;
-            font-weight: 800;
-            &:hover{
-              color: $active-color;
-            }
-          }
-          h6{
-            margin-bottom: 5px;
-            margin-top: 10px;
-            font-size: 12px;
-            font-weight: 200;
-            color: $font-gray;
-          }
-          .skill{
-            padding: 10px 20px;
-            button{
-              background-color: $main-color;
-              border: 1px solid #ced9ee;
-              border-radius: 25px;
-              font-size: 12px;
-              font-weight: 500;
-              padding: 10px 10px;
-
-              &:hover{
-                background-color: $active-color;
-                color: #ffffff;
-                cursor: pointer;
-              }
-              &.more-skill{
-                background-color: $active-color;
-                color: #ffffff;
-              }
-            }
-
-          }
-          p{
-            padding: 10px 20px;
-            margin: 0;
-            font-size: 12px;
-            font-weight: 500;
-            margin-bottom: 15px;
-
-          }
-          .profile{
-              font-size: 14px;
-              width: 100%;
-              padding-top: 30px;
-              padding-bottom: 30px;
-              bottom: 0;
-              margin-top: 20px;
-              text-transform: uppercase;
-              font-weight: 700;
-              &:hover{
-                background-color: $active-color;
-                cursor: pointer;
-                a{
-                  color: #fff;
-                }
-              }
-
-          }
-
+          @include font(15px, 800, $font-family);
+          margin: 0;
+          padding: 8px 38px 0px 0px;
         }
       }
-  }
-}
-footer{
-  background-color: $footer-color !important;
-  padding-left:75PX;
-  padding-right: 75PX;
-  height: 250px;
-  color: #fff;
-  /*width: 100%;*/
-  bottom: 0;
-  .logo{
-    width: 25%;
-    float: left;
-  }
-  .social{
-    width: 25%;
-    float: left;
-    i{
-      &:not(:first-of-type)
-        {
-            margin-left: 25px;
+      .content {
+        clear: both;
+        padding-top: 15px;
+        img {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          border: 2px solid $active-color;
         }
+        h5 {
+          margin-bottom: 5px;
+          margin-top: 10px;
+          @include font(18px, 800, $font-family);
+          &:hover {
+            color: $active-color;
+          }
+        }
+        h6 {
+          margin-bottom: 5px;
+          margin-top: 10px;
+          @include font(12px, 200, $font-family);
+          color: $font-gray;
+        }
+        .skill {
+          padding: 10px 20px;
+          button {
+            background-color: $main-color;
+            border: 1px solid #ced9ee;
+            border-radius: 25px;
+            @include font(12px, 500, $font-family);
+            padding: 10px;
+            &:hover {
+              background-color: $active-color;
+              color: #ffffff;
+              cursor: pointer;
+            }
+            &.more-skill {
+              background-color: $active-color;
+              color: #ffffff;
+            }
+          }
+        }
+        p {
+          padding: 10px 20px;
+          margin: 0;
+          @include font(12px, 500, $font-family);
+          margin-bottom: 15px;
+        }
+        .profile {
+          @include font(14px, 700, $font-family);
+          width: 100%;
+          padding: 30px 0px 30px 0px;
+          bottom: 0;
+          margin-top: 20px;
+          text-transform: uppercase;
+          &:hover {
+            background-color: $active-color;
+            cursor: pointer;
+            a {
+              color: #fff;
+            }
+          }
+        }
+      }
     }
   }
-  .directory, .staff, .support{
-    width:15%;
+}
+footer {
+  background-color: $footer-color !important;
+  padding: 0px 75px 0px 75px;
+  height: 250px;
+  color: #fff;
+  bottom: 0;
+  .logo {
+    width: 25%;
+    float: left;
+  }
+  .social {
+    width: 25%;
+    float: left;
+    i {&:not(:first-of-type) {
+        margin-left: 25px;
+      }
+    }
+  }
+  .directory,
+  .staff,
+  .support {
+    width: 15%;
     float: left;
   }
   ul {
-  list-style-type: none;
-  padding: 0px;
+    list-style-type: none;
+    padding: 0;
   }
-  li{
+  li {
     margin-bottom: 15px;
-    font-size: 12px;
-    font-weight: 400;
+    @include font(12px, 400, $font-family);
     color: #a6b8d2;
-    font-family: $font-family;
-    &:hover{
+    &:hover {
       color: #ffffff;
       cursor: pointer;
     }
   }
-  h5{
-    font-size: 12px;
-    font-weight: 700;
+  h5 {
+    @include font(12px, 700, $font-family);
     color: #ffffff;
-    font-family: $font-family;
   }
 }

@@ -1,7 +1,7 @@
 body {
   background-color: #f0f4f8;
   color: #3c495a;
-  margin: 0px; }
+  margin: 0; }
 
 a {
   text-decoration: none;
@@ -13,36 +13,31 @@ header {
   border-bottom: 1px solid rgba(0, 0, 0, 0.57);
   box-shadow: 0 10px 10px -10px #f0f4f8;
   width: 100%;
-  padding: 30px 0; }
+  padding: 0px 0px 30px 30px; }
   header .container {
     width: 100%; }
+  header .header-heading {
+    width: 40%;
+    display: inline;
+    margin-left: 75px; }
+    header .header-heading a img {
+      width: 150px; }
+  header .header-menu {
+    float: right;
+    margin-right: 80px; }
+    header .header-menu a {
+      font-family: "Roboto", sans-serif;
+      font-weight: 500;
+      font-size: 12px;
+      margin-left: 25px; }
+      header .header-menu a.active {
+        color: #55a8fd; }
 
 .txt-green {
   color: #56D48F !important; }
 
 .txt-blue {
   color: #55a8fd !important; }
-
-.header-heading {
-  width: 40%;
-  display: inline;
-  margin-left: 75px; }
-  .header-heading a {
-    font-family: "Roboto", sans-serif;
-    font-weight: 800;
-    font-size: 16px; }
-    .header-heading a img {
-      width: 150px; }
-
-.header-menu {
-  float: right;
-  margin-right: 80px; }
-  .header-menu a {
-    font-weight: 500;
-    font-size: 12px;
-    margin-left: 25px; }
-    .header-menu a.active {
-      color: #55a8fd; }
 
 .body-content .breadcrumb {
   background-color: #ffffff; }
@@ -52,7 +47,7 @@ header {
     list-style: none; }
     .body-content .breadcrumb ul li {
       display: inline;
-      font-size: 18px;
+      font-family: "Roboto", sans-serif;
       font-weight: 500;
       font-size: 14px;
       color: #55a8fd; }
@@ -62,26 +57,24 @@ header {
         .body-content .breadcrumb ul li a:hover {
           color: #55a8fd; }
     .body-content .breadcrumb ul li + li:before {
-      padding: 0px;
+      padding: 0;
       color: #3c495a;
       content: "/\00a0"; }
 
 .body-content .pagination {
-  /*margin-top: 30px;*/
   background-color: #ffffff; }
   .body-content .pagination .content {
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
+    font-size: 12px;
     color: #7f92a9;
-    padding-top: 30px;
-    padding-bottom: 60px;
-    padding-left: 75px;
-    padding-right: 75px; }
+    padding: 30px 75px 60px; }
     .body-content .pagination .content .body {
       float: right; }
       .body-content .pagination .content .body a {
-        font-size: 12px;
+        font-family: "Roboto", sans-serif;
         font-weight: 400;
+        font-size: 12px;
         color: #7f92a9;
         padding: 2px 5px;
         text-decoration: none; }
@@ -120,17 +113,18 @@ header {
         border-radius: 25px;
         color: #fff;
         float: left;
-        font-size: 15px;
+        font-family: "Roboto", sans-serif;
         font-weight: 500;
-        padding: 8px 8px;
+        font-size: 15px;
+        padding: 8px;
         margin-left: 30px; }
       .cards .card-body .tiles .heading h5 {
         float: right;
-        font-size: 15px;
+        font-family: "Roboto", sans-serif;
         font-weight: 800;
-        margin: 0px;
-        padding-top: 8px;
-        padding-right: 38px; }
+        font-size: 15px;
+        margin: 0;
+        padding: 8px 38px 0px 0px; }
     .cards .card-body .tiles .content {
       clear: both;
       padding-top: 15px; }
@@ -142,15 +136,17 @@ header {
       .cards .card-body .tiles .content h5 {
         margin-bottom: 5px;
         margin-top: 10px;
-        font-size: 18px;
-        font-weight: 800; }
+        font-family: "Roboto", sans-serif;
+        font-weight: 800;
+        font-size: 18px; }
         .cards .card-body .tiles .content h5:hover {
           color: #55a8fd; }
       .cards .card-body .tiles .content h6 {
         margin-bottom: 5px;
         margin-top: 10px;
-        font-size: 12px;
+        font-family: "Roboto", sans-serif;
         font-weight: 200;
+        font-size: 12px;
         color: #7f92a9; }
       .cards .card-body .tiles .content .skill {
         padding: 10px 20px; }
@@ -158,9 +154,10 @@ header {
           background-color: #ffffff;
           border: 1px solid #ced9ee;
           border-radius: 25px;
-          font-size: 12px;
+          font-family: "Roboto", sans-serif;
           font-weight: 500;
-          padding: 10px 10px; }
+          font-size: 12px;
+          padding: 10px; }
           .cards .card-body .tiles .content .skill button:hover {
             background-color: #55a8fd;
             color: #ffffff;
@@ -171,18 +168,19 @@ header {
       .cards .card-body .tiles .content p {
         padding: 10px 20px;
         margin: 0;
-        font-size: 12px;
+        font-family: "Roboto", sans-serif;
         font-weight: 500;
+        font-size: 12px;
         margin-bottom: 15px; }
       .cards .card-body .tiles .content .profile {
+        font-family: "Roboto", sans-serif;
+        font-weight: 700;
         font-size: 14px;
         width: 100%;
-        padding-top: 30px;
-        padding-bottom: 30px;
+        padding: 30px 0px 30px 0px;
         bottom: 0;
         margin-top: 20px;
-        text-transform: uppercase;
-        font-weight: 700; }
+        text-transform: uppercase; }
         .cards .card-body .tiles .content .profile:hover {
           background-color: #55a8fd;
           cursor: pointer; }
@@ -191,11 +189,9 @@ header {
 
 footer {
   background-color: #324258 !important;
-  padding-left: 75PX;
-  padding-right: 75PX;
+  padding: 0px 75px 0px 75px;
   height: 250px;
   color: #fff;
-  /*width: 100%;*/
   bottom: 0; }
   footer .logo {
     width: 25%;
@@ -205,23 +201,25 @@ footer {
     float: left; }
     footer .social i:not(:first-of-type) {
       margin-left: 25px; }
-  footer .directory, footer .staff, footer .support {
+  footer .directory,
+  footer .staff,
+  footer .support {
     width: 15%;
     float: left; }
   footer ul {
     list-style-type: none;
-    padding: 0px; }
+    padding: 0; }
   footer li {
     margin-bottom: 15px;
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
-    color: #a6b8d2;
-    font-family: "Roboto", sans-serif; }
+    font-size: 12px;
+    color: #a6b8d2; }
     footer li:hover {
       color: #ffffff;
       cursor: pointer; }
   footer h5 {
-    font-size: 12px;
+    font-family: "Roboto", sans-serif;
     font-weight: 700;
-    color: #ffffff;
-    font-family: "Roboto", sans-serif; }
+    font-size: 12px;
+    color: #ffffff; }
