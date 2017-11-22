@@ -1,102 +1,92 @@
 @import 'variable';
 @import 'partials';
+@import '_header';
+@import '_footer';
 
 body {
-  background-color: $background-color;
-  color: $font-color;
+  @include active-color($background-color, $font-color);
   margin: 0;
 }
 
 a {
-  text-decoration: none;
   color: $font-color;
   font-family: $font-family;
+  text-decoration: none;
 }
 
-header {
-  background: $main-color;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.57);
-  box-shadow: 0 10px 10px -10px $background-color;
-  width: 100%;
-  padding:0px 0px 30px 30px;
-
-  .container {
-    width: 100%;
-  }
-  .header-heading {
-    width: 40%;
-    display: inline;
-    margin-left: 75px;
-    a {
-      img {
-        width: 150px;
-      }
-    }
-  }
-  .header-menu {
-    float: right;
-    margin-right: 80px;
-    a {
-      @include font(12px, 500, $font-family);
-      margin-left: 25px;
-
-      &.active {
-        color: $active-color;
-      }
-    }
-  }
-}
 .txt-green {
   color: $tag-green !important;
 }
+
 .txt-blue {
   color: $active-color !important;
 }
+
 .body-content {
   .breadcrumb {
-    background-color: #ffffff;
+      @include active-color(#ffffff, $font-color);
     ul {
-      padding:30px 75px;
-      margin: 0;
       list-style: none;
+      margin: 0;
+      padding: 20px 75px;
+
       li {
-        display: inline;
-        @include font(14px, 500, $font-family);
+        @include font(12px, 400, $font-family);
         color: $active-color;
+        display: inline;
+
         a {
-          color: $font-color;
+          color: #7f92a9;
           text-decoration: none;
+
           &:hover {
             color: $active-color;
           }
         }
       }
+
       li+li:before {
-        padding:0;
         color: $font-color;
         content: "/\00a0";
+        padding: 0;
+      }
+      @include mobile {
+        padding: 10px 20px;
+      }
+      @include tablet {
+        padding: 20px;
       }
     }
   }
 
   .pagination {
-    background-color: #ffffff;
+    @include active-color(#ffffff, $font-color);
     .content {
       @include font(12px, 400, $font-family);
       color: #7f92a9;
       padding: 30px 75px 60px;
-      .body {
-        float: right;
-        a {
-          @include font(12px, 400, $font-family);
-          color: #7f92a9;
-          padding: 2px 5px;
-          text-decoration: none;
-          &.active {
-            background-color: $active-color;
-            color: #fff;
-          }
+
+      .body-large {
+        @extend .pagination-body;
+        @include mobile {
+          display: none;
         }
+      }
+
+      .body-small {
+        @extend .pagination-body;
+        @include tablet {
+          display: none;
+        }
+        @include desktop {
+          display: none;
+        }
+      }
+      @include mobile {
+        padding: 15px 20px 30px;
+      }
+      @include tablet {
+        padding: 15px 20px 30px;
       }
     }
   }
@@ -104,157 +94,178 @@ header {
 
 .cards {
   .card-title {
-    text-align: center;
     margin: 30px auto;
+    text-align: center;
+    h3{
+      @include font(20px, 700, $font-family);
+    }
   }
+
   .card-body {
     margin: auto 75px;
     text-align: center;
+
     .tiles {
-      height: 520px;
-      width: 32%;
+      @include active-color($main-color, $font-color);
       display: inline-block;
-      background-color: $main-color;
+      height: 520px;
       margin-bottom: 30px;
+      width: 32%;
+      position: relative;
+      @include mobile {
+        height: 420px;
+        width: 100%;
+      }
+      @include tablet {
+        height: 530px;
+      }
+
       &:nth-child(1) {
         float: left;
       }
+
       &:nth-child(3n+1) {
         float: left;
       }
+
       &:nth-child(3n) {
         float: right;
       }
+
       &:hover {
         /*transform: translate(0, -5px);*/
         box-shadow: 0 2px 8px rgba(0,0,0,.4);
       }
+
       .heading {
-        padding-top: 30px;
         height: 35px;
+        padding-top: 30px;
+
         button {
-          background-color: $tag-green;
+          @include font(15px, 500, $font-family);
+          @include active-color($tag-green, #ffffff);
           border: none;
           border-radius: 25px;
-          color: #fff;
           float: left;
-          @include font(15px, 500, $font-family);
-          padding: 8px;
           margin-left: 30px;
+          padding: 8px;
         }
+
         h5 {
-          float: right;
           @include font(15px, 800, $font-family);
+          float: right;
           margin: 0;
-          padding: 8px 38px 0px 0px;
+          padding: 8px 38px 0 0;
         }
       }
+
       .content {
         clear: both;
         padding-top: 15px;
+
         img {
-          width: 150px;
-          height: 150px;
-          border-radius: 50%;
           border: 2px solid $active-color;
+          border-radius: 50%;
+          @include img-square(150px, 150px);
+          @include mobile {
+             @include img-square(100px, 100px);
+          }
+          @include tablet {
+             @include img-square(120px, 120px);
+          }
         }
+
         h5 {
-          margin-bottom: 5px;
-          margin-top: 10px;
+          margin: 10px 0 5px;
           @include font(18px, 800, $font-family);
+
           &:hover {
             color: $active-color;
           }
         }
+
         h6 {
-          margin-bottom: 5px;
-          margin-top: 10px;
           @include font(12px, 200, $font-family);
           color: $font-gray;
+          margin: 10px 0 5px;
         }
+
         .skill {
           padding: 10px 20px;
+
           button {
-            background-color: $main-color;
+            @include font(12px, 500, $font-family);
+            @include active-color($main-color, $font-color);
             border: 1px solid #ced9ee;
             border-radius: 25px;
-            @include font(12px, 500, $font-family);
             padding: 10px;
+
             &:hover {
-              background-color: $active-color;
-              color: #ffffff;
+              @include active-color($active-color, #ffffff);
               cursor: pointer;
             }
+
             &.more-skill {
-              background-color: $active-color;
-              color: #ffffff;
+              @include active-color($active-color, #ffffff);
             }
           }
+          @include mobile {
+            display: none;
+          }
         }
+
         p {
-          padding: 10px 20px;
-          margin: 0;
           @include font(12px, 500, $font-family);
-          margin-bottom: 15px;
+          margin: 0 0 15px;
+          padding: 10px 20px;
         }
-        .profile {
-          @include font(14px, 700, $font-family);
-          width: 100%;
-          padding: 30px 0px 30px 0px;
-          bottom: 0;
-          margin-top: 20px;
-          text-transform: uppercase;
-          &:hover {
-            background-color: $active-color;
-            cursor: pointer;
-            a {
-              color: #fff;
-            }
+      }
+
+      .profile {
+        @include font(14px, 700, $font-family);
+        bottom: 0;
+        margin-top: 20px;
+        padding: 30px 0;
+        text-transform: uppercase;
+        width: 100%;
+        position: absolute;
+        background-image: linear-gradient(to bottom, white 50%, $active-color 50%);
+        background-size: 100% 200%;
+        -webkit-transition: background-position 0.5s;
+        -moz-transition: background-position 0.5s;
+        transition: background-position 0.5s;
+
+        &:hover {
+          @include active-color($active-color, $font-color);
+          cursor: pointer;
+          background-position: 0 100%;
+
+          a {
+            color: #ffffff;
           }
         }
       }
+    }
+    @include mobile {
+      margin: auto 20px;
+    }
+    @include tablet {
+      margin: auto 20px;
     }
   }
 }
-footer {
-  background-color: $footer-color !important;
-  padding: 0px 75px 0px 75px;
-  height: 250px;
-  color: #fff;
-  bottom: 0;
-  .logo {
-    width: 25%;
-    float: left;
-  }
-  .social {
-    width: 25%;
-    float: left;
-    i {&:not(:first-of-type) {
-        margin-left: 25px;
-      }
-    }
-  }
-  .directory,
-  .staff,
-  .support {
-    width: 15%;
-    float: left;
-  }
-  ul {
-    list-style-type: none;
-    padding: 0;
-  }
-  li {
-    margin-bottom: 15px;
+
+.pagination-body {
+  float: right;
+
+  a {
     @include font(12px, 400, $font-family);
-    color: #a6b8d2;
-    &:hover {
-      color: #ffffff;
-      cursor: pointer;
+    color: #7f92a9;
+    padding: 2px 5px;
+    text-decoration: none;
+
+    &.active {
+      @include active-color($active-color, '#ffffff');
     }
-  }
-  h5 {
-    @include font(12px, 700, $font-family);
-    color: #ffffff;
   }
 }

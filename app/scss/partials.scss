@@ -3,3 +3,30 @@
   font-weight: $fontWeight;
   font-size: $fontSize;
 }
+@mixin img-square($height, $width) {
+  height: $height;
+  width: $width;
+}
+@mixin active-color($bckClr, $color) {
+  background-color: $bckClr;
+  color: $color;
+}
+
+
+@mixin tablet {
+  @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$desktop-width}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$break-small}) {
+    @content;
+  }
+}
