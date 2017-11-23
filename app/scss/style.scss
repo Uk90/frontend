@@ -1,5 +1,5 @@
-@import 'variable';
-@import 'partials';
+@import '_variable';
+@import '_mixings';
 @import '_header';
 @import '_footer';
 
@@ -13,7 +13,6 @@ a {
   font-family: $font-family;
   text-decoration: none;
 }
-
 .txt-green {
   color: $tag-green !important;
 }
