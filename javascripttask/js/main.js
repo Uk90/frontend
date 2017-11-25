@@ -1,6 +1,6 @@
+'use strict'
 //////////////////////////////////////TASK 1
 function taskDate() {
-  console.log('Task 1');
 var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 var from_year = document.querySelector("#start_year").value;
 var start_year = document.querySelector("#start_year").value;
@@ -8,7 +8,8 @@ var to_year = document.querySelector("#end_year").value;
 var task1Output = document.querySelector("#task1Output");
 var year_count = to_year - from_year;
 var output = '';
-for(i=0; i<=year_count; i++){
+var date = '';
+for(var i=0; i<=year_count; i++){
   date = new Date(''+start_year+'-01-01');
   if(date.getDay() === 1){
     output += 'On '+start_year+' January is a == '+days[date.getDay()];
@@ -41,10 +42,10 @@ function strCombinations() {
   var arrayOfStrings = reptCom.split('');
   var output = '';
 
-  for(i=0; i<arrayOfStrings.length; i++){
+  for(var i=0; i<arrayOfStrings.length; i++){
     var newarr = arrayOfStrings[i];
     output += newarr +', ';
-    for(j=i+1; j<arrayOfStrings.length; j++){
+    for(var j=i+1; j<arrayOfStrings.length; j++){
       newarr = newarr.concat(arrayOfStrings[j]);
       output += newarr +', ';
     }
@@ -56,7 +57,7 @@ function strCombinations() {
 function strRepeated() {
   var reptStr = document.querySelector("#inputStrRep").value;
   var task4Output = document.querySelector("#task4Output");
-for(i=0; i<reptStr.length; i++){
+for(var i=0; i<reptStr.length; i++){
   if(reptStr.indexOf(reptStr.charAt(i)) === reptStr.lastIndexOf(reptStr.charAt(i))){
     var output = reptStr.charAt(i);
     task4Output.innerText = 'The first not repeated character is "'+output+'"';
@@ -74,18 +75,10 @@ function arrMerge() {
 var array3 = [];
 var array4 = [];
 array3 =  array1.concat(array2);
-console.log(array3);
-for(i=0; i<array3.length; i++){
-  console.log(array3[i]);
+for(var i=0; i<array3.length; i++){
     if(array4.indexOf(array3[i]) === -1){
       array4.push(array3[i]);
     }
 }
-console.log('array3');
-console.log(array4);
 task5Output.innerText = array4;
 }
-
-var array1 = [1, 2, 3, 4, 6, 3, 6];
-var array2 = [2, 30, 30, 58, 6, 2, 1];
-// arrMerge(array1, array2)
