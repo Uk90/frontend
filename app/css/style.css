@@ -313,6 +313,15 @@ a {
         background-position: 0 100%; }
         .cards .card-body .tiles .profile:hover a {
           color: #ffffff; }
+      .cards .card-body .tiles .profile:before {
+        background-color: #C6BFBF;
+        content: '';
+        display: block;
+        height: 1px;
+        margin: 0 42%;
+        position: absolute;
+        top: 0;
+        width: 15%; }
   @media (max-width: 760px) {
     .cards .card-body {
       margin: auto 20px; } }

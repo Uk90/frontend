@@ -243,6 +243,16 @@ a {
             color: #ffffff;
           }
         }
+        &:before {
+                background-color: $before-line-color;
+                content: '';
+                display: block;
+                height: 1px;
+                margin: 0 42%;
+                position: absolute;
+                top: 0;
+                width: 15%;
+            }
       }
     }
     @include mobile {
