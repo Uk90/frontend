@@ -10,12 +10,12 @@ var year_count = to_year - from_year;
 var output = '';
 for(i=0; i<=year_count; i++){
   date = new Date(''+start_year+'-01-01');
-start_year++;
   if(date.getDay() === 1){
     output += 'On '+start_year+' January is a == '+days[date.getDay()];
     output += '||Date is '+date +'\n';
      task1Output.innerText = output;
   }
+  start_year++;
 }
 }
 //////////////////////////////////////TASK 2
